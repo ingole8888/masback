@@ -8,8 +8,9 @@ const authController = require('./route/userRoute');
 const { verify } = require('./middleware/Verify');
 app.use(express.json());
 app.use(cors());
-app.use('/', verify, playerRouter);
+
 app.use('/', authController);
+app.use('/', verify, playerRouter);
 
 app.get('/',(req,res)=>{
     res.send("hello world")
