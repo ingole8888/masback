@@ -9,7 +9,7 @@ const { verify } = require('./middleware/Verify');
 app.use(express.json());
 app.use(cors());
 
-app.use('/', authController);
+app.use('/user', authController);
 app.use('/', verify, playerRouter);
 
 app.get('/',(req,res)=>{
